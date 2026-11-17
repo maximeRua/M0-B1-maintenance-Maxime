@@ -1,0 +1,31 @@
+# Versions figées : installation identique sur tous les postes.
+# API, validation et tests : mêmes versions que le brief M0-B2.
+
+# API + serveur
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+# Dépendances indirectes de FastAPI, figées pour éviter les avertissements
+# de dépréciation au lancement des tests.
+starlette==0.41.3
+anyio==4.6.2.post1
+
+# Validation
+pydantic==2.10.3
+
+# ML : scikit-learn doit correspondre exactement à la version qui a produit
+# model.joblib. Si tu changes de version, réentraîne le modèle :
+# `python model/train_baseline.py`
+scikit-learn==1.9.0
+joblib==1.6.0
+numpy==2.4.6
+pandas==3.1.1
+
+# Journalisation (préférée au logging stdlib)
+loguru==0.7.3
+
+# Tests
+pytest==8.3.4
+httpx==0.28.1
+
+# (Optionnel) régénérer le dataset
+faker==40.52.0
